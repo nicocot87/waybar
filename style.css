@@ -1,0 +1,80 @@
+/* Global settings */
+* {
+    font-family: "FontAwesome", "Roboto", "Helvetica", "Arial", sans-serif;
+    font-size: 13px;
+    border: none;
+    border-radius: 0;
+}
+
+window#waybar {
+    background-color: rgba(30, 30, 46, 0.8);
+    color: #ffffff;
+}
+
+/* --- WORKSPACES (Cleaned Up) --- */
+#workspaces {
+    margin: 4px 8px;
+    /* Removed the background here to prevent the "double oval" look */
+    background: transparent; 
+}
+
+#workspaces button {
+    padding: 0 15px;
+    margin: 0 2px;
+    background-color: #313244; /* The "inactive" color */
+    color: #bac2de;
+    border-radius: 12px;
+    transition: all 0.2s ease-in-out;
+}
+
+/* The active workspace - now fills the space perfectly */
+#workspaces button.focused,
+#workspaces button.active,
+#workspaces button.visible {
+    background-color: #89b4fa; /* Solid Blue */
+    color: #11111b;
+    border-radius: 12px;
+}
+
+#workspaces button.urgent {
+    background-color: #f38ba8;
+    color: #ffffff;
+}
+
+#workspaces button:hover {
+    background: #45475a;
+    color: #ffffff;
+}
+
+/* --- MODULES --- */
+#clock, #battery, #cpu, #memory, #disk, #temperature, 
+#backlight, #network, #pulseaudio, #wireplumber, 
+#tray, #mode, #idle_inhibitor, #scratchpad, #language {
+    padding: 2px 12px;
+    margin: 4px 4px;
+    background-color: #313244;
+    color: #cdd6f4;
+    border-radius: 12px;
+}
+
+#clock { color: #cba6f7; font-weight: bold; }
+#battery.charging { color: #a6e3a1; }
+
+#cpu { color: #89dceb; }
+#memory { color: #fab387; }
+#network { color: #89b4fa; }
+#pulseaudio { color: #f9e2af; }
+
+/* Animation Fix */
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color: #f38ba8;
+    color: #ffffff;
+    animation: blink 0.5s linear infinite alternate;
+}
