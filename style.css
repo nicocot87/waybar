@@ -78,3 +78,15 @@ window#waybar {
     color: #ffffff;
     animation: blink 0.5s linear infinite alternate;
 }
+
+#custom-power {
+    /* Increase this value until it looks right */
+    font-size: 30px; 
+    
+    /* Optional: Add padding so it doesn't look cramped */
+    padding-left: 10px;
+    padding-right: 10px;
+    
+    /* Optional: Vertical alignment if it looks "off-center" */
+    margin-bottom: 0px; 
+}
